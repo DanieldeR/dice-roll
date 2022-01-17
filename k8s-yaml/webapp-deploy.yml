@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rng-webapp
+  name: rng-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rng-webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rng-webapp
+    spec:
+      containers:
+      - image: danielderepentigny/webapp:latest
+        name: webapp
+        resources: {}
+status: {}

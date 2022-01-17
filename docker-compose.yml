@@ -1,0 +1,12 @@
+version: '2'
+services:
+  webapp:
+    build: webapp/
+    ports: 
+      - "8000:8000"
+    depends_on:
+      - rng-svc
+  rng-svc:
+    build: rng-svc/
+    ports:
+      - "5000:5000"

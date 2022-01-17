@@ -1,0 +1,43 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Webapp",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "webapp/app.py",
+                "FLASK_ENV": "development",
+                "AM_I_IN_DOCKER": "no",
+                "FLASK_RUN_PORT": "8000"
+            },
+            "args": [
+                "run",
+                "--no-debugger"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Remote K8s Webapp",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "webapp/app.py",
+                "FLASK_ENV": "development",
+                "AM_I_IN_DOCKER": "yes",
+                "FLASK_RUN_PORT": "8000"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+            ],
+            "jinja": true,
+            "preLaunchTask": "bridge-to-kubernetes.resource"
+        }
+    ]
+}

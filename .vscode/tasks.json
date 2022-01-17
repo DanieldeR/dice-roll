@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "bridge-to-kubernetes.resource",
+			"type": "bridge-to-kubernetes.resource",
+			"resource": "rng-webapp-7dbbddd8b6-",
+			"resourceType": "pod",
+			"ports": [
+				8000
+			],
+			"targetCluster": "thinkpad",
+			"targetNamespace": "default",
+			"useKubernetesServiceEnvironmentVariables": false
+		}
+	]
+}
