@@ -1,12 +1,17 @@
 from flask import Flask
 from random import choices
+import itertools
 
 app = Flask(__name__)
 
-def get_rng():
-    dice_array = range(1, 7)
+card_array = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+suit_array = ['C', 'H', 'S', 'D']
 
-    data = choices(dice_array, k=10)
+deck = [f'{a}{b}' for a, b in itertools.product(card_array, suit_array)]
+
+def get_rng():
+
+    data = choices(deck, k=10)
 
     return data
 
