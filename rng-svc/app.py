@@ -11,7 +11,7 @@ deck = [f'{a}{b}' for a, b in itertools.product(card_array, suit_array)]
 
 def get_rng():
 
-    data = choices(deck, k=10)
+    data = choices(deck, k=5)
 
     return data
 

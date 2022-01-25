@@ -1,14 +1,29 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="{{
+            url_for('static', filename='style.css') }}">
     </head>
     <body>
         
-        <h1>Dice Rolls - Updated</h1>
-        <ul>
-            {% for item in data %}
-            <li> {{ item }} </li>
-            {% endfor %}
-        </ul>
+        <div class="center">
+
+            <h1>Random Cards</h1>
+        </div>
+        <div class="center">
+
+            <button id='refresh'>Refresh</button>
+        </div>    
+        <div class="center">
+
+            <ul id="cards" class="wrapper">
+                {% for item in data %}
+                <li> {{ item }} </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+
+        <script type=text/javascript src="{{
+            url_for('static', filename='js/main.js') }}"></script>
     </body>
 </html>

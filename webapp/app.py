@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, jsonify
 import requests
 import os
 
@@ -16,6 +16,13 @@ def hello():
     data = requests.get(rng_url).json()
 
     return render_template('index.html', data=data['rngs'])
+
+
+@app.route('/cards')
+def cards():
+    data = requests.get(rng_url).json()
+
+    return jsonify(data['rngs'])
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8000)
