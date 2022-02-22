@@ -1,0 +1,5 @@
+k8s_config:
+- manifest_path: /kube
+  cluster_info:
+    cluster_id: 16ab2c54-3be7-531b-b01c-6f5809949154
+    cluster_name: Daniel de R.'s cluster
